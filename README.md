@@ -23,11 +23,11 @@
 4. 运行自动配置脚本
 	```bash
 	# Dry run
-	python ..\project_setup.py
-	项目名称(不需要写lib): libXXX
+	python scripts/project_setup.py
+	项目名称(不需要写lib): XXX 对应的项目即为 libXXX
 	作者(seekit): Your name
-	倒序域名(seekit.dev): Your domain. Use your name dot cc if without one.
-	E-Mail: Your email
+	倒序域名(seekit.dev): Your domain, use your name and dot cc if you don't have one
+	E-Mail: Your email, actually no regex matching written
 	开源证书(MIT): Usually MIT, GNU or Apache, or any you want
 
 	==================== Git 分支选择 ====================
@@ -37,10 +37,10 @@
 	请选择目标平台编号 (1-2, 默认1): Different branches contain projects for different target platform
 	
 	# Run!
-	python ..\project_setup.py
-	项目名称(不需要写lib): libPID
-	作者(seekit): neolux
-	倒序域名(seekit.dev): neolux.cc
+	python scripts/project_setup.py --run
+	项目名称(不需要写lib): PID
+	作者(seekit): seekit
+	倒序域名(seekit.dev): seekit.dev
 	E-Mail: user@email.com
 	开源证书(MIT): MIT
 
@@ -66,7 +66,7 @@
 		iex ((iwr "$m/neoluxis/keil_library_template/raw/main/scripts/setup.ps1").Content) 
 	} 
 	```
-4. 设置参数即可
+4. 信息填写如上
 
 ## 提交规范
 
@@ -80,16 +80,19 @@
 | refactor | 代码重构，不影响内部行为、功能的修改 |
 | test | 测试用例新增，修改 |
 | style | 修改代码风格之类 |
-| perf | 在不影响内部行为和功能情况下进行性能优化，例如计算速度等 |
+| perf | 在不影响内部行为和功能情况下进行性能优化 |
 | chore | 杂项，上述分类未包含的内容，请勿滥用 |
 
 ## TODO
 
 ### 支持更多目标平台
-目前只做了 STM32F10x 的模板，即具有库项目和测试项目的模板，未来可能会制作其他模板。通过不同分支进行区分
+目前只做了 STM32F10x 的模板，即具有库项目和测试项目的模板，未来可能会制作其他模板。通过不同分支进行区分。
+
+通常很多函数库并不止针对于一种 MCU，而且并不依赖于某种特定芯片的固件库，对于这种函数库可以直接用任意分支开发。
 
 - [x] STM32F10x
 - [ ] STM32F40x
+- [ ] STM32H72x
 - [ ] Other
 
 ---
