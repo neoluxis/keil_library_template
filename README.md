@@ -6,9 +6,11 @@
 
 [参考文档](./doc)
 
-对于本示例函数库来说，虽然函数中没有用到 STM32 相关的固件库，但是仓库中却附带上了，并且 STM32 HAL 库的源码文件并未在库项目中添加，即并不会编译，这样的行为其实是不好的。
+对于本示例函数库来说，虽然函数中没有用到 STM32 相关的固件库，但是仓库中却附带上了，并且 STM32 HAL 库的源码文件并未在库项目中添加，即并不会编译。
+这种行为，即把项目无关的源码放进仓库，是不好的。
 
-通过本模板创建的项目，如果未用到 STM32 固件库，可以直接删掉或忽略相关的源文件和头文件。如果用到了，则需要把源文件添加进项目才能正常编译。
+本模板用于 MCU 的函数库开发。如果不针对特定平台，可以直接删除仓库中 `libABC` 中 `Drivers` 文件夹的内容；如果需要使用特定平台的厂商库函数，
+则把 `Drivers` 中原有 `.c/h` 全部删除，然后添加厂商的头文件即可，不需要附带源文件。
 
 ## 使用方法
 ### Fork 后以模板新建 Repo
@@ -34,7 +36,7 @@
 	[1] main [STM32F10x]
 	[2] remotes/origin/main [STM32F10x]
 
-	请选择目标平台编号 (1-2, 默认1): Different branches contain projects for different target platform
+	请选择目标平台编号 (1-2, 默认 1): Different branches contain projects for different target platform
 	
 	# Run!
 	python scripts/project_setup.py --run
@@ -49,6 +51,8 @@
 	[2] remotes/origin/main [STM32F10x]
 
 	请选择目标平台编号 (1-2, 默认1): 1
+	
+	打开工作空间？(Y/n) y
 	```
 	
 ### 直接利用 Powershell 命令
@@ -110,3 +114,5 @@
 5. 请从一开始就保持仓库整洁，不要把编译后文件、临时文件、临时备忘录等文件添加进来
 
 6. 建议保持源码和二进制两种方式进行分发，并维护好 release、issue、pull request等
+
+7. 模板中提供了面向过程和面向对象的示例可供参考，包括文档注释的示例

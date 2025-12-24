@@ -1,3 +1,4 @@
 --create .\build\libABC.lib
 .\build\libabc.o
+.\build\example_oop.o
 .\build\versions.o

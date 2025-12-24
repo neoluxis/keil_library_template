@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "dev/seekit/libABC/libABC.h"
+#include "dev/seekit/libABC/example_oop.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,12 +100,24 @@ int main(void)
 	int* added = 0;
   while (1)
   {
-		for (uint32_t i=0x0004ffff; i; --i) {
-			example_function();
+		for(;;) {
+			for (uint32_t i=0x0002ffff; i; --i) {
+				example_function();
+			}
+			added = add(j, k);
+			printf("Result: %d, Overflow: %d\r\n", added[0], added[1]);
+			j *=2, k *=5;
+			if (added[1]) break;
 		}
-		added = add(j, k);
-		printf("Result: %d, Overflow: %d\r\n", added[0], added[1]);
-		j *=2, k *=2;
+		printf("Test example_oop\r\n");
+		{
+			Example_t exs[20];
+			for(int i =0; i<20; i++) {
+				example_init(exs+i, "Hello World!");
+				example_print(exs+i);
+			}
+			for(;;);
+		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

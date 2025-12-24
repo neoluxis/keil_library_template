@@ -389,6 +389,11 @@
               <FileType>1</FileType>
               <FilePath>..\Library\src\libABC.c</FilePath>
             </File>
+            <File>
+              <FileName>example_oop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Library\src\example_oop.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

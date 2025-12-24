@@ -1,4 +1,4 @@
-echo off
+@echo off
 
 echo Cleaning old lib fils in testing project...
 :: Remove old headers
