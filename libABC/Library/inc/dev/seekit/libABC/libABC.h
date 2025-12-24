@@ -10,7 +10,7 @@ extern int value;
  * @desc This function makes the mcu sleep for a clock circle
  * @retval None
  */
-extern void example_function();
+extern void example_function(void);
 
 /**
  * @desc This function adds two numbers, return the result and whether there is overflow
