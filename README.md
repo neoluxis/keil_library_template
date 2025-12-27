@@ -72,6 +72,12 @@
 	```
 4. 信息填写如上
 
+===
+
+几个使用该模板的库供参考
+
+- [libLogMCU](https://github.com/neoluxis/keil_libLogMCU.git)：一个用于 MCU 的日志库
+
 ## 提交规范
 
 | 前缀 | 含义 |
